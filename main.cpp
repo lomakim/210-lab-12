@@ -14,5 +14,15 @@ int main() {
     const int SIZE = 30;
     array <double, SIZE> hrsGaming;
 
+    ifstream fin;
+    fin.open("file.txt");
+
+    for(int i = 0; i < SIZE; i++){
+        fin >> hrsGaming[i];
+        cout << "Day " << i + 1 << ": " << hrsGaming[i] << endl;
+    }
+
+    
+    fin.close();
     return 0;
 }
