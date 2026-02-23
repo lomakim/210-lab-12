@@ -84,7 +84,23 @@ int main() {
     }
     cout << endl << endl;
 
+    // Search for value decided by user input
+    target = 0;
+    while (target != -1){
+        cout << "\nEnter a value you would like to search for (or -1 to end): ";
+        cin >> target;
+        loc = find(hrsGaming.begin(), hrsGaming.end(), target);
+        if (loc != hrsGaming.end()) {
+            cout << target << " hours were played on day " 
+                 << loc - hrsGaming.begin() << "." << endl;
+        }
+        else {
+            cout << "There were no days in the past 30 days where "
+                 << target << " hours were played." << endl;
+        }
+    }
 
-    fin.close();
+
+    fin.close();    // close file
     return 0;
 }
