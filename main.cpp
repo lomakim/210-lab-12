@@ -35,19 +35,24 @@ int main() {
     // Declare iterator to find elements
     array<double, SIZE>::iterator loc;
     
-    //cout << "\nTotal Hours Played: " 
-    //     << accumulate(hrsGaming.begin(), hrsGaming.end(), 0) << endl;
-    //cout << "Sum: " << accumulate(hrsGaming.begin(), hrsGaming.end(), 0) << endl;
+    // Find total hours played
+    cout << "\nYou played a total of "
+         << accumulate(hrsGaming.begin(), hrsGaming.end(), 0)
+         << " hours in the past 30 days." << endl;
     
     // Find lowest number of hours and location
     target = *min_element(hrsGaming.begin(), hrsGaming.end());
     loc = find(hrsGaming.begin(), hrsGaming.end(), target);
-    cout << "Lowest number of hours played was on day " << loc - hrsGaming.begin()
-         << " with " << target << " hrs played." << endl;
+    cout << "Lowest number of hours played was on day "
+         << loc - hrsGaming.begin() << " with " << target
+         << " hours played." << endl;
 
-
-    cout << "Highest number of hours played: "
-         << *max_element(hrsGaming.begin(), hrsGaming.end()) << endl;
+    // Find highest number of hours and location
+    target = *max_element(hrsGaming.begin(), hrsGaming.end());
+    loc = find(hrsGaming.begin(), hrsGaming.end(), target);
+    cout << "Highest number of hours played was on day "
+         << loc - hrsGaming.begin() << " with " << target
+         << " hours played." << endl;
 
     // Create duplicate array for sorting and copy in values
     array <double, SIZE> sortArr;
@@ -57,7 +62,7 @@ int main() {
 
     // Sort the sorting arr from low to high then print
     sort(sortArr.begin(), sortArr.end());
-    cout << "Hours sorted from low to high:" << endl;
+    cout << "\nHours sorted from low to high:" << endl;
     for(double val : sortArr) {
         count = 0;
         cout << val << "\t";
