@@ -13,9 +13,11 @@ int main() {
     // DECLARATIONS
     const int SIZE = 30;
     double target = 0.0;    // Used to search for values
+    int count;              // Used to count in range loop
     
 
     array <double, SIZE> hrsGaming;
+    array <double, SIZE> sortArr;
 
     ifstream fin;
     fin.open("file.txt");
@@ -31,13 +33,16 @@ int main() {
             cout << endl;
     }
 
+
+
     //cout << "\nTotal Hours Played: " 
     //     << accumulate(hrsGaming.begin(), hrsGaming.end(), 0) << endl;
-    cout << "Minimum hours played: "
+    //cout << "Sum: " << accumulate(hrsGaming.begin(), hrsGaming.end(), 0) << endl;
+    cout << "Lowest number of hours played: "
          << *min_element(hrsGaming.begin(), hrsGaming.end()) << endl;
+    cout << "Highest number of hours played: "
+         << *max_element(hrsGaming.begin(), hrsGaming.end()) << endl;
 
-
-    
     fin.close();
     return 0;
 }
